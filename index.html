@@ -1530,7 +1530,7 @@
                             options: ['u = cos(2x² + 1); du = 4x dx.', 'u = 2x² + 1; du = 4x dx.', 'u = 4x; du = 4x dx.'],
                             answer: 1,
                             errors: ['La derivada de cos(2x² + 1) incluye −sin(2x² + 1), además de 4x.', '', 'Si u = 4x, entonces du = 4 dx. Ese cambio no elimina la composición que queremos simplificar.'],
-                            explanation: 'La derivada de 2x² + 1 es 4x. Con ese cambio queda ∫cos u du = sin u + C = sin(2x² + 1) + C.',
+                            explanation: 'Con el cambio u = 2x² + 1 tenemos du = 4x dx, por lo que queda ∫ cos u du = sin u + C. También puede resolverse directamente: el factor 4x es la derivada de la función interior 2x² + 1, de modo que reconocemos la forma ∫ f′(x) cos(f(x)) dx = sin(f(x)) + C. Por tanto, la primitiva es sin(2x² + 1) + C.',
                             hints: ['Buscad la función que está dentro del coseno.', 'Derivad 2x² + 1 y comparad con el factor exterior.']
                         },
                         {
@@ -1541,7 +1541,7 @@
                             math: '∫ x/(x<sup>2</sup> + 4) dx = a · ln(x<sup>2</sup> + 4) + C',
                             answer: .5,
                             label: 'Valor de a',
-                            explanation: 'Con u = x² + 4 tenemos du = 2x dx. Por tanto x dx = du/2 y la primitiva es ½ ln(x² + 4) + C. El argumento es positivo para todo x real.',
+                            explanation: 'Podemos resolver esta integral de forma inmediata multiplicando el numerador por 2 y compensando con un factor 1/2 fuera de la integral: ∫ x/(x² + 4) dx = ½ · ∫ 2x/(x² + 4) dx. Así, el numerador 2x coincide con la derivada del denominador x² + 4 y reconocemos la forma ∫ f′(x)/f(x) dx = ln|f(x)| + C. Por tanto, la primitiva es ½ ln(x² + 4) + C y el valor de a es 1/2. El valor absoluto no es necesario porque x² + 4 siempre es positivo.',
                             error: 'Al derivar ln(x² + 4) aparece 2x/(x² + 4). ¿Qué factor exterior convierte ese 2x en x?',
                             hints: ['Tomad u = x² + 4 y calculad du.', 'Como du = 2x dx, el factor x dx corresponde a la mitad de du.']
                         },
@@ -1631,7 +1631,7 @@
                 tasks: [
                     {
                         type: 'choice',
-                        short: 'Primera runa',
+                        short: 'Primera clave',
                         title: 'Un producto engañoso',
                         prompt: 'Ya no se indica la especialidad. ¿Qué método elegiríais por su sencillez?',
                         math: '∫ 3x<sup>2</sup> e<sup>x³</sup> dx',
@@ -1643,7 +1643,7 @@
                     },
                     {
                         type: 'choice',
-                        short: 'Segunda runa',
+                        short: 'Segunda clave',
                         title: 'La elección sencilla',
                         prompt: '¿Qué procedimiento conviene explorar primero?',
                         math: '∫ (5x<sup>4</sup> − 3 cos x) dx',
@@ -1655,7 +1655,7 @@
                     },
                     {
                         type: 'choice',
-                        short: 'Tercera runa',
+                        short: 'Tercera clave',
                         title: 'El último método',
                         prompt: '¿Qué elección reduce la dificultad del problema?',
                         math: '∫ x cos x dx',
